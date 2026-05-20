@@ -2,24 +2,25 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Package, ArrowRight, ExternalLink } from 'lucide-react';
+import { getProductImageUrl } from '../../utils/imageHelper';
 
 const mockOrders = [
   {
     id: 'TRX-9482',
     date: 'Dec 12, 2024',
     status: 'Delivered',
-    total: 12500,
+    total: 1200,
     items: [
-      { name: 'Arctic Star Diamond Necklace', qty: 1, image: 'https://images.unsplash.com/photo-1599643478524-fb66f70d00f0?w=150&auto=format&fit=crop&q=80' }
+      { name: 'Dell Latitude 5430', qty: 1, image: getProductImageUrl('products/Dell Latitude 5430.webp') }
     ]
   },
   {
     id: 'TRX-8233',
     date: 'Nov 05, 2024',
     status: 'Processing',
-    total: 3200,
+    total: 120,
     items: [
-      { name: 'CMS GLOBAL Quilted Tote', qty: 1, image: 'https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=150&auto=format&fit=crop&q=80' }
+      { name: 'Hikvision 4K Dome Camera', qty: 1, image: getProductImageUrl('products/Hikvision 4K Dome Camera.jpg') }
     ]
   }
 ];

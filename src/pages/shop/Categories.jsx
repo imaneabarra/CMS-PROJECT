@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { getProductImageUrl } from '../../utils/imageHelper';
 
 const categoryDescriptions = {
   'video-surveillance': 'Professional IP cameras, NVRs, and recording solutions for comprehensive monitoring.',
@@ -22,21 +23,21 @@ const categoryDescriptions = {
 };
 
 const categoryImages = {
-  'video-surveillance': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
-  'cctv-cameras': 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&q=80',
-  'access-control': 'https://images.unsplash.com/photo-1555864326-5cf22ef123cf?w=800',
-  'networking': 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800',
-  'pc-portables': 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800',
-  'pc-bureau': 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800',
-  'printers-scanners': 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800',
-  'smart-home-domotics': 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800',
-  'security-systems': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80',
-  'accessories-peripherals': 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800',
-  'storage-devices': 'https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&q=80',
-  'monitors': 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800',
-  'smart-devices': 'https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=800',
-  'office-equipment': 'https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=800',
-  'alarm-systems': 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800',
+  'video-surveillance': 'products/nvr-hikvision-32-channels-4k-ds-7732nxi-k4.jpg',
+  'cctv-cameras': 'products/Hikvision 4K Dome Camera.jpg',
+  'access-control': 'products/ZKTeco SpeedFace-V5L.jpg',
+  'networking': 'products/Cisco 24-Port Gigabit Switch.jpg',
+  'pc-portables': 'products/Dell Latitude 5430.webp',
+  'pc-bureau': 'products/HP ProTower G9.png',
+  'printers-scanners': 'products/HP LaserJet Pro M404n.jpg',
+  'smart-home-domotics': 'products/Smart Video Intercom.jpg',
+  'security-systems': 'products/Complete Home Security Kit.jpg',
+  'accessories-peripherals': 'products/Mechanical Keyboard RGB.jpg',
+  'storage-devices': 'products/Kingston 1TB NVMe SSD.jpg',
+  'monitors': 'products/Dell 27-inch 4K Monitor.jpg',
+  'smart-devices': 'products/Amazon Echo Hub.jpg',
+  'office-equipment': 'products/Paper Shredder Ultra.jpg',
+  'alarm-systems': 'products/Wireless Smart Alarm Kit.jpg',
 };
 
 const Categories = () => {
@@ -82,7 +83,7 @@ const Categories = () => {
               className="group relative rounded-[2.5rem] overflow-hidden aspect-[4/5] bg-aether-700 border border-glass-border shadow-2xl hover:border-cyan-500/30 transition-all duration-700"
             >
               <img
-                src={categoryImages[cat.slug] || 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800'}
+                src={getProductImageUrl(categoryImages[cat.slug]) || 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800'}
                 alt={cat.name}
                 className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-110 transition-all duration-[2000ms] grayscale group-hover:grayscale-0"
               />

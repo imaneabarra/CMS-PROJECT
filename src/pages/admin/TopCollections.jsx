@@ -4,6 +4,7 @@ import { ArrowLeft, Star, TrendingUp, Camera, Shield, Wifi, Monitor, Printer, Ho
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 import { toast } from 'react-hot-toast';
+import { getProductImageUrl } from '../../utils/imageHelper';
 
 const categoryIcons = {
   'Video Surveillance': Camera,
@@ -24,21 +25,21 @@ const categoryIcons = {
 };
 
 const categoryImages = {
-  'Video Surveillance': 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800',
-  'CCTV Cameras': 'https://images.unsplash.com/photo-1551817812-790176866160?w=800',
-  'Access Control': 'https://images.unsplash.com/photo-1555864326-5cf22ef123cf?w=800',
-  'Networking': 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800',
-  'PC Portables': 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800',
-  'PC Bureau': 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800',
-  'Printers & Scanners': 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800',
-  'Smart Home / Domotics': 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800',
-  'Security Systems': 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800',
-  'Accessories & Peripherals': 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800',
-  'Storage Devices': 'https://images.unsplash.com/photo-1597872200349-016042e54a65?w=800',
-  'Monitors': 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800',
-  'Smart Devices': 'https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=800',
-  'Office Equipment': 'https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=800',
-  'Alarm Systems': 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800',
+  'Video Surveillance': 'products/nvr-hikvision-32-channels-4k-ds-7732nxi-k4.jpg',
+  'CCTV Cameras': 'products/Hikvision 4K Dome Camera.jpg',
+  'Access Control': 'products/ZKTeco SpeedFace-V5L.jpg',
+  'Networking': 'products/Cisco 24-Port Gigabit Switch.jpg',
+  'PC Portables': 'products/Dell Latitude 5430.webp',
+  'PC Bureau': 'products/HP ProTower G9.png',
+  'Printers & Scanners': 'products/HP LaserJet Pro M404n.jpg',
+  'Smart Home / Domotics': 'products/Smart Video Intercom.jpg',
+  'Security Systems': 'products/Complete Home Security Kit.jpg',
+  'Accessories & Peripherals': 'products/Mechanical Keyboard RGB.jpg',
+  'Storage Devices': 'products/Kingston 1TB NVMe SSD.jpg',
+  'Monitors': 'products/Dell 27-inch 4K Monitor.jpg',
+  'Smart Devices': 'products/Amazon Echo Hub.jpg',
+  'Office Equipment': 'products/Paper Shredder Ultra.jpg',
+  'Alarm Systems': 'products/Wireless Smart Alarm Kit.jpg',
 };
 
 const TopCollections = () => {
@@ -98,7 +99,7 @@ const TopCollections = () => {
         ) : (
           categories.map((cat, i) => {
             const Icon = categoryIcons[cat.name] || Shield;
-            const imgSrc = categoryImages[cat.name] || 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800';
+            const imgSrc = getProductImageUrl(categoryImages[cat.name]) || 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800';
             const catProducts = products.filter(p => {
               const pCat = typeof p.category === 'object' ? p.category?.name : p.category;
               return pCat === cat.name;
@@ -162,7 +163,7 @@ const TopCollections = () => {
               >
                 <div className="w-20 h-20 rounded-xl bg-aether-800 border border-glass-border overflow-hidden p-2 flex-shrink-0 relative z-10 shadow-inner">
                   <img
-                    src={product.image_url || product.image || 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=100&h=100&fit=crop'}
+                    src={product.image_url || getProductImageUrl(product.image) || 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=100&h=100&fit=crop'}
                     alt={product.name}
                     className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
                   />

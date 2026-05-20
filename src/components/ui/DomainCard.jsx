@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { getProductImageUrl } from '../../utils/imageHelper';
 
 const DomainCard = ({ domain, index = 0 }) => {
   return (
@@ -12,7 +13,7 @@ const DomainCard = ({ domain, index = 0 }) => {
     >
       {/* Background Image */}
       <img
-        src={domain.image}
+        src={getProductImageUrl(domain.image)}
         alt={domain.title}
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-110 group-hover:brightness-110"
       />

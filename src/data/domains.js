@@ -4,7 +4,7 @@ const domains = [
     title: "Video Surveillance",
     subtitle: "CMS SECURITY",
     description: "AI-powered cameras & NVR solutions",
-    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&h=400&fit=crop&q=80",
+    image: "products/nvr-hikvision-32-channels-4k-ds-7732nxi-k4.jpg",
     span: "col-span-1"
   },
   {
@@ -12,7 +12,7 @@ const domains = [
     title: "Access Control",
     subtitle: "SECURE ACCESS",
     description: "Biometric & RFID perimeter management",
-    image: "https://images.unsplash.com/photo-1555864326-5cf22ef123cf?w=600&h=400&fit=crop&q=80",
+    image: "products/ZKTeco SpeedFace-V5L.jpg",
     span: "col-span-1"
   },
   {
@@ -20,7 +20,7 @@ const domains = [
     title: "Networking",
     subtitle: "ENTERPRISE IT",
     description: "Managed switches & Wi-Fi infrastructure",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=400&fit=crop&q=80",
+    image: "products/Cisco 24-Port Gigabit Switch.jpg",
     span: "col-span-1"
   },
   {
@@ -28,7 +28,7 @@ const domains = [
     title: "IT Hardware",
     subtitle: "BUSINESS PC",
     description: "Professional laptops & workstations",
-    image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=400&fit=crop&q=80",
+    image: "products/Dell Latitude 5430.webp",
     span: "col-span-1"
   }
 ];
